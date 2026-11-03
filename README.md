@@ -1,4 +1,4 @@
-# Kita Tools ⛏️
+# KitaMCTools ⛏️
 
 > All-in-one Minecraft tools in your browser, built for server owners, developers and builders.
 
