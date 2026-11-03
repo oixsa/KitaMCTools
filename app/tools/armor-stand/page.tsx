@@ -106,8 +106,8 @@ export default function ArmorStandPage() {
     if (isInvisible) tags.push('Invisible:1b');
     if (noGravity) tags.push('NoGravity:1b');
     if (customName) {
-      const escaped = customName.replace(/"/g, '\\"');
-      tags.push(`CustomName:'{"text":"${escaped}"}',CustomNameVisible:1b`);
+      const jsonName = JSON.stringify(customName);
+      tags.push(`CustomName:'{"text":${jsonName}}',CustomNameVisible:1b`);
     }
 
     const poseTags: string[] = [];
