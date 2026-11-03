@@ -5,16 +5,16 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Status: In development](https://img.shields.io/badge/status-in%20development-orange)
 
-Kita Tools puts the Minecraft utilities you keep hunting for into one fast, clean web app, so you don't have to hop between a dozen different websites while setting up or building a server. It runs entirely in the browser: no account, no install.
+KitaMCTools puts the Minecraft utilities you keep hunting for into one fast, clean web app, so you don't have to hop between a dozen different websites while setting up or building a server. It runs entirely in the browser: no account, no install.
 
 <!-- TODO: add live demo link, e.g. **Live demo:** https://your-domain.example -->
-<!-- TODO: add a screenshot, e.g. ![Kita Tools home page](docs/screenshot.png) -->
+<!-- TODO: add a screenshot, e.g. ![KitaMCTools home page](docs/screenshot.png) -->
 
 ---
 
-## Why Kita Tools?
+## Why KitaMCTools?
 
-Setting up and running a Minecraft server usually means bouncing between separate sites for your MOTD, server icon, JSON text, calculators and more. Kita Tools aims to bring **every tool a server owner or developer needs into one place**, including, eventually, a world converter.
+Setting up and running a Minecraft server usually means bouncing between separate sites for your MOTD, server icon, JSON text, calculators and more. KitaMCTools aims to bring **every tool a server owner or developer needs into one place**, including, eventually, a world converter.
 
 > **Status:** work in progress. Only complete, fully working tools are listed in the catalog.
 
