@@ -263,17 +263,14 @@ export default function MotdEditorPage() {
   const exportServerProperties = () => {
     // Converts to unicode escapes \u00A7
     const convert = (str: string) => {
-      let res = str.replace(/&([0-9a-fk-or])/gi, '\\u00A7$1');
+      let res = str.replace(/\\/g, '\\\\');
+      res = res.replace(/§/g, '\\u00A7');
+
+      res = res.replace(/&([0-9a-fk-or])/gi, '\\u00A7$1');
       res = res.replace(/§([0-9a-fk-or])/gi, '\\u00A7$1');
-      // Hex codes: &#RRGGBB -> \u00A7x\u00A7R\u00A7R...
-      res = res.replace(/&#([0-9a-fA-F]{6})/g, (_, hex) => {
-        return (
-          '\\u00A7x' +
-          hex
-            .split('')
-            .map((c: string) => `\\u00A7${c.toLowerCase()}`)
-            .join('')
-        );
+
+      res = res.replace(/&#([0-9a-f]{6})/gi, (match, hex) => {
+        return `\\u00A7x\\u00A7${hex[0]}\\u00A7${hex[1]}\\u00A7${hex[2]}\\u00A7${hex[3]}\\u00A7${hex[4]}\\u00A7${hex[5]}`;
       });
       return res;
     };
