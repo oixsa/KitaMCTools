@@ -165,7 +165,11 @@
 
   html {
     scroll-behavior: smooth;
-    color-scheme: light dark;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   body {

@@ -1,9 +1,9 @@
-# Kita Tools — Design Direction (Material 3 / Material You)
+# KitaMCTools — Design Direction (Material 3 / Material You)
 
 Dial: ENERGY 2 / RHYTHM 2 / MOTION 2
 
 ## 1. Product Identity & Personality
-- **Product**: Kita Tools — Precision web utilities, shape generators, and server calculators crafted for Minecraft voxel architects, builders, and administrators.
+- **Product**: KitaMCTools — Precision web utilities, shape generators, and server calculators crafted for Minecraft voxel architects, builders, and administrators.
 - **Personality**: Tactical, precise, purposeful, modern, and crafted.
 - **Visual Style**: Authentic **Material 3 (Material You / M3)** with a Minecraft-appropriate tonal palette. High visual clarity, tonal surface elevation instead of noisy shadows, and comfortable touch targets.
 

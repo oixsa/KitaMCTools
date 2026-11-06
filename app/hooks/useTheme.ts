@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from 'react';
 import { ThemeMode } from '../types/tools';
 
-const STORAGE_KEY = 'kitatools_theme';
+const STORAGE_KEY = 'KitaMCTools_theme';
 
 function applyTheme(mode: ThemeMode) {
   if (typeof document === 'undefined') return;

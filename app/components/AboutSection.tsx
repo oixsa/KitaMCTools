@@ -81,7 +81,7 @@ export function AboutSection() {
         </h2>
 
         <p className="text-base sm:text-lg text-[var(--md-sys-color-on-surface-variant)] leading-relaxed">
-          <strong className="text-[var(--md-sys-color-on-surface)] font-semibold">Kita Tools</strong> was
+          <strong className="text-[var(--md-sys-color-on-surface)] font-semibold">KitaMCTools</strong> was
           built on a simple premise: Minecraft creators, builders, and server administrators should not have to
           hunt down twenty different single-purpose websites from 2012 just to get their work done. We unite all
           essential Minecraft generators, calculators, and visualizers in one fast, ad-free platform.
@@ -118,7 +118,7 @@ export function AboutSection() {
       {/* 4 Guiding Pillars (M3 Surface Container Block) */}
       <div className="p-6 sm:p-10 rounded-[28px] bg-[var(--md-sys-color-surface-container-low)] border border-[var(--md-sys-color-outline-variant)]/40 mb-12">
         <h3 className="font-headline font-bold text-xl sm:text-2xl text-[var(--md-sys-color-on-surface)] mb-8">
-          Why Kita Tools is built differently
+          Why KitaMCTools is built differently
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -144,14 +144,14 @@ export function AboutSection() {
           <div className="relative w-8 h-8 flex-shrink-0">
             <Image
               src="/logo.png"
-              alt="kita tools logo"
+              alt="KitaMCTools logo"
               width={32}
               height={32}
               className="object-contain"
             />
           </div>
           <div className="text-xs text-[var(--md-sys-color-on-surface-variant)]">
-            <span className="font-semibold text-[var(--md-sys-color-on-surface)]">Kita Tools</span> is an open fan project. Not an official Minecraft product, and not approved by or associated with Mojang or Microsoft.
+            <span className="font-semibold text-[var(--md-sys-color-on-surface)]">KitaMCTools</span> is an open fan project. Not an official Minecraft product, and not approved by or associated with Mojang or Microsoft.
           </div>
         </div>
 

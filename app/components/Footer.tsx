@@ -14,14 +14,13 @@ export function Footer() {
             <div className="flex items-center gap-2.5 mb-3">
               <Image
                 src="/logo.png"
-                alt="kita tools logo"
+                alt="KitaMCTools logo"
                 width={28}
                 height={28}
                 className="object-contain"
               />
               <span className="font-headline font-bold text-base text-[var(--md-sys-color-on-surface)]">
-                kita{' '}
-                <span className="text-[var(--md-sys-color-primary)]">tools</span>
+                <span className="text-[var(--md-sys-color-on-surface)]">KitaMCTools</span>
               </span>
             </div>
             <p className="text-xs sm:text-sm text-[var(--md-sys-color-on-surface-variant)] leading-relaxed mb-4">
@@ -61,7 +60,7 @@ export function Footer() {
         {/* Legal Disclaimer & Bottom Utility Row */}
         <div className="pt-6 border-t border-[var(--md-sys-color-outline-variant)]/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--md-sys-color-on-surface-variant)]">
           <p className="text-center sm:text-left">
-            © 2026 kita tools. Not an official Minecraft website. Not approved by or associated with
+            © 2026 KitaMCTools. Not an official Minecraft website. Not approved by or associated with
             Mojang or Microsoft.
           </p>
           <div className="flex items-center gap-4">

@@ -1,6 +1,6 @@
 /**
  * Single source of truth for Minecraft color codes, dyes, text formatting, and color math.
- * Standardizes color palettes across all Kita Tools utilities.
+ * Standardizes color palettes across all KitaMCTools utilities.
  */
 
 export interface MinecraftColor {

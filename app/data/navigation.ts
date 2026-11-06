@@ -37,8 +37,8 @@ export const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: 'Project & Docs',
     links: [
-      { label: 'About Kita Tools', href: '/#about' },
-      { label: 'GitHub Repository', href: 'https://github.com/oixsa/kita-tools' },
+      { label: 'About KitaMCTools', href: '/#about' },
+      { label: 'GitHub Repository', href: 'https://github.com/oixsa/KitaMCTools' },
     ],
   },
 ];

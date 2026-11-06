@@ -37,7 +37,7 @@ export default function Home() {
         onSearchChange={setSearchQuery}
       />
 
-      {/* About Kita Tools Section */}
+      {/* About KitaMCTools Section */}
       <AboutSection />
     </div>
   );

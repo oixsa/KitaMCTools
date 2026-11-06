@@ -17,7 +17,7 @@ export function Hero() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)]/50 shadow-2xs mb-6 select-none">
               <span className="w-2 h-2 rounded-full bg-[var(--md-sys-color-primary)] animate-pulse" />
               <span className="font-mono-meta text-[11px] font-bold text-[var(--md-sys-color-on-surface-variant)] uppercase tracking-wider">
-                kita tools v2.5
+                KitaMCTools v2.5
               </span>
               <span className="text-[var(--md-sys-color-outline)]">•</span>
               <span className="text-xs font-semibold text-[var(--md-sys-color-primary)]">

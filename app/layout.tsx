@@ -80,7 +80,7 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var stored = localStorage.getItem('kitatools_theme');
+                  var stored = localStorage.getItem('KitaMCTools_theme');
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                   if (stored === 'dark' || (!stored && prefersDark)) {
                     document.documentElement.classList.add('dark');
@@ -95,7 +95,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col antialiased">
+      <body
+        className="min-h-full flex flex-col antialiased"
+        suppressHydrationWarning
+      >
         <AppShell>{children}</AppShell>
       </body>
     </html>

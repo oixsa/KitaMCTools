@@ -182,7 +182,7 @@ export function QuickLauncherModal({
             <span>ESC Close</span>
           </div>
           <span className="text-[var(--md-sys-color-primary)] font-bold">
-            Kita Tools
+            KitaMCTools
           </span>
         </div>
       </div>

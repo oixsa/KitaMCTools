@@ -1,12 +1,12 @@
-# Kita Tools — Architecture & Developer Documentation
+# KitaMCTools — Architecture & Developer Documentation
 
-Dokumentasi ini menerangkan reka bentuk senibina sistem (architecture), struktur kod, sistem tema dwimod (Light & Dark), serta panduan penyelenggaraan (maintenance) untuk projek **Kita Tools**.
+Dokumentasi ini menerangkan reka bentuk senibina sistem (architecture), struktur kod, sistem tema dwimod (Light & Dark), serta panduan penyelenggaraan (maintenance) untuk projek **KitaMCTools**.
 
 ---
 
 ## 1. Gambaran Keseluruhan (Overview)
 
-Kita Tools dibangunkan menggunakan **Next.js (App Router)**, **React 19**, **TypeScript**, dan **Tailwind CSS v4**. Projek ini direka bentuk khusus untuk arkitek voxel dan pembina Minecraft dengan penekanan pada:
+KitaMCTools dibangunkan menggunakan **Next.js (App Router)**, **React 19**, **TypeScript**, dan **Tailwind CSS v4**. Projek ini direka bentuk khusus untuk arkitek voxel dan pembina Minecraft dengan penekanan pada:
 
 - **Kebolehselenggaraan (Maintainability)**: Data alatan, panduan, dan kategori dipisahkan sepenuhnya daripada lapisan UI (presentation layer).
 - **Kebolehbacaan (Readability)**: Setiap komponen mematuhi prinsip tanggungjawab tunggal (*Single Responsibility Principle*), ditaip dengan ketat menggunakan TypeScript (*strict typing*), dan disertakan komen panduan yang jelas.
@@ -20,7 +20,7 @@ Kita Tools dibangunkan menggunakan **Next.js (App Router)**, **React 19**, **Typ
 ## 2. Struktur Direktori (Directory Structure)
 
 ```
-kitatools/
+KitaMCTools/
 ├── app/
 │   ├── components/                 # Komponen UI modular
 │   │   ├── AppShell.tsx            # Shell induk (Header + Footer + Modal carian global ⌘K)

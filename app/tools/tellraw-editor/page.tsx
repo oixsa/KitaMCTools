@@ -134,7 +134,7 @@ export default function TellrawEditorPage() {
       strikethrough: false,
       obfuscated: false,
       clickAction: 'open_url',
-      clickValue: 'https://kitatools.com',
+      clickValue: 'https://github.com/oixsa/KitaMCTools',
       hoverAction: 'show_text',
       hoverValue: 'Visit our official website',
     },

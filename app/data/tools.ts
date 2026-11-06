@@ -1,7 +1,7 @@
 import { CategoryOption, Tool } from '../types/tools';
 
 /**
- * Category definitions for Kita Tools All-in-One Minecraft Suite.
+ * Category definitions for KitaMCTools All-in-One Minecraft Suite.
  */
 export const CATEGORIES: CategoryOption[] = [
   { id: 'all', label: 'All tools', icon: 'apps' },
@@ -13,7 +13,7 @@ export const CATEGORIES: CategoryOption[] = [
 ];
 
 /**
- * Complete catalog of active, functional Kita Tools Minecraft utilities.
+ * Complete catalog of active, functional KitaMCTools Minecraft utilities.
  * Every tool listed here has an active, tested route in app/tools/.
  */
 export const TOOLS: Tool[] = [

@@ -89,7 +89,7 @@ export function MobileNavbar({ isOpen, onClose }: MobileNavbarProps) {
       <div className="mt-4 pt-3 border-t border-[var(--md-sys-color-outline-variant)]/40 flex items-center justify-between text-xs text-[var(--md-sys-color-on-surface-variant)]">
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/oixsa/kita-tools"
+            href="https://github.com/oixsa/KitaMCTools"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline flex items-center gap-1"
@@ -134,7 +134,7 @@ export function Navbar({
             <div className="relative w-8 h-8 flex-shrink-0">
               <Image
                 src="/logo.png"
-                alt="kita tools logo"
+                alt="KitaMCTools logo"
                 width={32}
                 height={32}
                 className="object-contain group-hover:scale-105 transition-transform"
@@ -143,10 +143,10 @@ export function Navbar({
             </div>
             <div className="flex items-baseline gap-1.5">
               <span className="font-headline font-extrabold text-lg text-[var(--md-sys-color-on-surface)] tracking-tight">
-                kita
+                Kita
               </span>
               <span className="font-headline font-bold text-lg text-[var(--md-sys-color-primary)] transition-colors">
-                tools
+                MCTools
               </span>
               <span className="hidden sm:inline-block font-mono-meta text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[var(--md-sys-color-primary-container)] text-[var(--md-sys-color-on-primary-container)] ml-1">
                 M3
@@ -194,7 +194,7 @@ export function Navbar({
 
           {/* GitHub Link */}
           <a
-            href="https://github.com/oixsa/kita-tools"
+            href="https://github.com/oixsa/KitaMCTools"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden lg:flex w-10 h-10 rounded-full items-center justify-center text-[var(--md-sys-color-on-surface-variant)] hover:text-[var(--md-sys-color-on-surface)] hover:bg-[var(--md-sys-color-surface-container)] transition-colors"

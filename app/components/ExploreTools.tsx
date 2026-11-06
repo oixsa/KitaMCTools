@@ -13,8 +13,6 @@ interface ExploreToolsProps {
   onSearchChange: (query: string) => void;
 }
 
-type SortOption = 'name-asc' | 'name-desc' | 'featured' | 'popular';
-
 export function ExploreTools({
   tools,
   isFavorite,
@@ -23,16 +21,15 @@ export function ExploreTools({
   onSearchChange,
 }: ExploreToolsProps) {
   const [activeCategory, setActiveCategory] = useState<ToolCategoryId | 'favorites'>('all');
-  const [sortBy, setSortBy] = useState<SortOption>('name-asc');
 
   // Count starred tools
   const favoriteCount = useMemo(() => {
     return tools.filter((tool) => isFavorite(tool.id)).length;
   }, [tools, isFavorite]);
 
-  // Filter and sort tools
+  // Filter tools
   const filteredTools = useMemo(() => {
-    let list = tools.filter((tool) => {
+    return tools.filter((tool) => {
       // Handle favorites filter
       if (activeCategory === 'favorites') {
         if (!isFavorite(tool.id)) return false;
@@ -49,30 +46,14 @@ export function ExploreTools({
 
       return matchesSearch;
     });
-
-    list = [...list].sort((a, b) => {
-      if (sortBy === 'name-asc') {
-        return a.title.localeCompare(b.title);
-      }
-      if (sortBy === 'name-desc') {
-        return b.title.localeCompare(a.title);
-      }
-      if (sortBy === 'featured') {
-        return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
-      }
-      return 0;
-    });
-
-    return list;
-  }, [tools, activeCategory, searchQuery, sortBy, isFavorite]);
+  }, [tools, activeCategory, searchQuery, isFavorite]);
 
   const clearFilters = () => {
     setActiveCategory('all');
     onSearchChange('');
-    setSortBy('name-asc');
   };
 
-  const hasActiveFilters = Boolean(searchQuery) || activeCategory !== 'all' || sortBy !== 'name-asc';
+  const hasActiveFilters = Boolean(searchQuery) || activeCategory !== 'all';
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 w-full" id="explore-tools">
@@ -87,7 +68,7 @@ export function ExploreTools({
           </p>
         </div>
 
-        {/* Live Search & Sort Toolbar (M3 Text Fields) */}
+        {/* Live Search Toolbar */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full lg:w-auto ">
           {/* M3 Docked Search Field */}
           <div className="relative flex-1 sm:flex-none sm:w-72">
@@ -114,27 +95,10 @@ export function ExploreTools({
             )}
           </div>
 
-          {/* M3 Sort Selector (desktop/tablet only) */}
-          <div className="relative hidden sm:block sm:w-52">
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as SortOption)}
-              aria-label="Sort tools"
-              className="w-full sm:w-auto h-11 px-4 pr-9 rounded-full bg-[var(--md-sys-color-surface-container-high)] text-[var(--md-sys-color-on-surface-variant)] text-xs sm:text-sm font-medium shadow-2xs border border-transparent focus:outline-none focus:border-[var(--md-sys-color-primary)] cursor-pointer appearance-none"
-            >
-              <option value="name-asc">Sort: Name A to Z</option>
-              <option value="name-desc">Sort: Name Z to A</option>
-              <option value="featured">Sort: Featured</option>
-              <option value="popular">Sort: Most popular</option>
-            </select>
-            <span className="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-[var(--md-sys-color-outline)] text-[18px]">
-              unfold_more
-            </span>
-          </div>
         </div>
       </div>
 
-      {/* Mobile Category Dropdown (replaces chips & sort on small screens) */}
+      {/* Mobile Category Dropdown */}
       <div className="relative sm:hidden mb-6">
         <span className="material-symbols-outlined absolute left-3.5 top-3 pointer-events-none text-[var(--md-sys-color-outline)] text-[18px]">
           {activeCategory === 'favorites' ? 'star' : 'filter_list'}

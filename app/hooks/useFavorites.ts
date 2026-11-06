@@ -2,7 +2,7 @@
 
 import { useSyncExternalStore } from 'react';
 
-const FAVORITES_STORAGE_KEY = 'kitatools_favorites';
+const FAVORITES_STORAGE_KEY = 'KitaMCTools_favorites';
 
 function getFavoritesSnapshot(): string {
   if (typeof window === 'undefined') return '[]';

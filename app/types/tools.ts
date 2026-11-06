@@ -1,5 +1,5 @@
 /**
- * Type definitions for Kita Tools application.
+ * Type definitions for KitaMCTools application.
  * Provides strict contracts for tool cards, categories, guides, and theme states.
  */
 
