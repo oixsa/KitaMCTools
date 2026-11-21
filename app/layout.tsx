@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import {
   Inter,
   JetBrains_Mono,
@@ -35,6 +35,13 @@ const fontVariables = [
   plusJakarta.variable,
   spaceGrotesk.variable,
 ].join(' ');
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#F8F9FC' },
+    { media: '(prefers-color-scheme: dark)', color: '#191414' },
+  ],
+};
 
 export const metadata: Metadata = {
   title: 'KitaMCTools: Minecraft tools for builders & creators',

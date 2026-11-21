@@ -233,7 +233,7 @@ export default function BeaconCalculatorPage() {
 
               <div className="p-3 rounded-xl bg-[var(--md-sys-color-surface-container-lowest)] border border-[var(--md-sys-color-outline-variant)]">
                 <div className="text-xs text-[var(--md-sys-color-on-surface-variant)]">Shulker Boxes</div>
-                <div className="text-2xl font-headline font-bold text-emerald-600 dark:text-emerald-400">
+                <div className="text-2xl font-headline font-bold text-[var(--md-sys-color-primary)]">
                   {shulkers}
                 </div>
                 <div className="text-[10px] text-[var(--md-sys-color-on-surface-variant)] mt-0.5">full storage boxes</div>
