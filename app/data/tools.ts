@@ -162,6 +162,18 @@ export const TOOLS: Tool[] = [
     engineVersion: 'Java 1.20.5+',
   },
   {
+    id: 'log-analyzer',
+    title: 'AI Crash Log Analyzer',
+    description: 'Paste or upload a crash log for instant offline pattern matching, plain-language causes and fixes, plus optional AI deep analysis.',
+    category: 'utilities',
+    badge: 'ACTIVE',
+    isFlagship: false,
+    featured: true,
+    href: '/tools/log-analyzer',
+    icon: 'troubleshoot',
+    engineVersion: 'Java & Bedrock',
+  },
+  {
     id: 'leather-dye-calculator',
     title: 'Leather Armor Dye Mixer',
     description: 'Simulate vanilla Minecraft dye mixing across 5.7M colors with crafting recipes and /give commands.',

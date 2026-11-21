@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { CATEGORIES } from '../data/tools';
 import { Tool, ToolCategoryId } from '../types/tools';
 import { ToolCard } from './ToolCard';
+import { useRipple } from '../hooks/useRipple';
 
 interface ExploreToolsProps {
   tools: Tool[];
@@ -21,6 +22,7 @@ export function ExploreTools({
   onSearchChange,
 }: ExploreToolsProps) {
   const [activeCategory, setActiveCategory] = useState<ToolCategoryId | 'favorites'>('all');
+  const onRipple = useRipple();
 
   // Count starred tools
   const favoriteCount = useMemo(() => {
@@ -128,7 +130,8 @@ export function ExploreTools({
         <button
           type="button"
           onClick={() => setActiveCategory('all')}
-          className={`m3-chip cursor-pointer whitespace-nowrap shrink-0 ${
+          onPointerDown={onRipple}
+          className={`m3-chip m3-ripple-host cursor-pointer whitespace-nowrap shrink-0 ${
             activeCategory === 'all' ? 'm3-chip-selected' : ''
           }`}
         >
@@ -144,7 +147,8 @@ export function ExploreTools({
         <button
           type="button"
           onClick={() => setActiveCategory('favorites')}
-          className={`m3-chip cursor-pointer whitespace-nowrap shrink-0 ${
+          onPointerDown={onRipple}
+          className={`m3-chip m3-ripple-host cursor-pointer whitespace-nowrap shrink-0 ${
             activeCategory === 'favorites' ? 'm3-chip-selected' : ''
           }`}
         >
@@ -171,7 +175,8 @@ export function ExploreTools({
               key={cat.id}
               type="button"
               onClick={() => setActiveCategory(cat.id)}
-              className={`m3-chip cursor-pointer whitespace-nowrap shrink-0 ${
+              onPointerDown={onRipple}
+              className={`m3-chip m3-ripple-host cursor-pointer whitespace-nowrap shrink-0 ${
                 isSelected ? 'm3-chip-selected' : ''
               }`}
             >
@@ -211,13 +216,18 @@ export function ExploreTools({
       {/* Tools Catalog Grid */}
       {filteredTools.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 ">
-          {filteredTools.map((tool) => (
-            <ToolCard
+          {filteredTools.map((tool, i) => (
+            <div
               key={tool.id}
-              tool={tool}
-              isFavorite={isFavorite(tool.id)}
-              onToggleFavorite={() => onToggleFavorite(tool.id)}
-            />
+              className="stagger-in"
+              style={{ animationDelay: `${Math.min(i * 40, 400)}ms` }}
+            >
+              <ToolCard
+                tool={tool}
+                isFavorite={isFavorite(tool.id)}
+                onToggleFavorite={() => onToggleFavorite(tool.id)}
+              />
+            </div>
           ))}
         </div>
       ) : (
