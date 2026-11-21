@@ -155,7 +155,7 @@ export function ExploreTools({
           {activeCategory === 'favorites' ? (
             <span className="material-symbols-outlined text-[16px]">check</span>
           ) : (
-            <span className={`material-symbols-outlined text-[16px] ${favoriteCount > 0 ? 'text-[var(--md-sys-color-tertiary)] filled' : ''}`}>
+            <span className={`material-symbols-outlined text-[16px] ${favoriteCount > 0 ? 'text-[var(--md-sys-color-accent)] filled' : ''}`}>
               star
             </span>
           )}

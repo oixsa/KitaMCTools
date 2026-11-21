@@ -72,7 +72,7 @@ export function QuickLauncherModal({
     >
       {/* M3 Dialog Container (28px corner radius & surface-container-high) */}
       <div
-        className="w-full max-w-xl bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)]/40 rounded-[28px] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150"
+        className="w-full max-w-xl bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)]/40 rounded-[28px] overflow-hidden animate-in zoom-in-95 duration-150"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Header Input (M3 Docked Search) */}

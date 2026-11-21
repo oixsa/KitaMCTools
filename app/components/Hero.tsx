@@ -126,7 +126,7 @@ export function Hero() {
                     </p>
                   </div>
                 </div>
-                <span className="font-mono-meta text-[10px] uppercase font-bold px-2.5 py-1 rounded-md bg-[var(--md-sys-color-primary-container)] text-[var(--md-sys-color-on-primary-container)] whitespace-nowrap">
+                <span className="font-mono-meta text-[10px] uppercase font-bold px-2.5 py-1 rounded-md bg-[var(--md-sys-color-accent-container)] text-[var(--md-sys-color-on-accent-container)] whitespace-nowrap">
                   Featured
                 </span>
               </div>

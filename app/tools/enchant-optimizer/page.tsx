@@ -336,12 +336,12 @@ export default function EnchantOptimizerPage() {
 
               <div className="flex items-center gap-2">
                 {isTooExpensive ? (
-                  <div className="px-3 py-1.5 rounded-lg bg-red-100 dark:bg-red-950/60 border border-red-300 dark:border-red-800 text-red-700 dark:text-red-400 text-xs font-bold flex items-center gap-1.5">
+                  <div className="px-3 py-1.5 rounded-lg bg-[var(--md-sys-color-error-container)] border border-[var(--md-sys-color-error)]/40 text-[var(--md-sys-color-on-error-container)] text-xs font-bold flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-[16px]">warning</span>
                     Too Expensive!
                   </div>
                 ) : (
-                  <div className="px-3 py-1.5 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400 text-xs font-bold flex items-center gap-1.5">
+                  <div className="px-3 py-1.5 rounded-lg bg-[var(--md-sys-color-primary-container)] border border-[var(--md-sys-color-primary)]/40 text-[var(--md-sys-color-on-primary-container)] text-xs font-bold flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-[16px]">check_circle</span>
                     100% Survival Safe (&lt;39)
                   </div>

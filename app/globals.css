@@ -32,50 +32,61 @@
   --color-m3-on-error: var(--md-sys-color-on-error);
   --color-m3-error-container: var(--md-sys-color-error-container);
   --color-m3-on-error-container: var(--md-sys-color-on-error-container);
+  /* Semantic gold accent: Star Gold (tertiary) in light, Festival Gold (secondary) in dark */
+  --color-m3-accent: var(--md-sys-color-accent);
+  --color-m3-on-accent: var(--md-sys-color-on-accent);
+  --color-m3-accent-container: var(--md-sys-color-accent-container);
+  --color-m3-on-accent-container: var(--md-sys-color-on-accent-container);
 }
 
 @layer base {
   :root {
     /* ==========================================================================
        Material 3 (Material You / M3) Design Tokens — Light Theme
-       Seed: Warm Terracotta / Redstone Copper (#904B32)
+       Seed: Oguri Cap — Royal Sapphire Blue (#255396) on Ash Silver
        ========================================================================== */
-    --md-sys-color-surface: #FFF8F6;
-    --md-sys-color-surface-dim: #E4D7D3;
-    --md-sys-color-surface-bright: #FFF8F6;
+    --md-sys-color-surface: #F8F9FC;
+    --md-sys-color-surface-dim: #D8DAE0;
+    --md-sys-color-surface-bright: #F8F9FC;
     --md-sys-color-surface-container-lowest: #FFFFFF;
-    --md-sys-color-surface-container-low: #FDF1ED;
-    --md-sys-color-surface-container: #F7EBE7;
-    --md-sys-color-surface-container-high: #F1E5E1;
-    --md-sys-color-surface-container-highest: #EBE0DC;
+    --md-sys-color-surface-container-low: #F2F4F8;
+    --md-sys-color-surface-container: #ECEEF4;
+    --md-sys-color-surface-container-high: #E6E8EE;
+    --md-sys-color-surface-container-highest: #E0E2E9;
 
-    --md-sys-color-on-surface: #231916;
-    --md-sys-color-on-surface-variant: #53433F;
-    --md-sys-color-outline: #85736E;
-    --md-sys-color-outline-variant: #D8C2BC;
+    --md-sys-color-on-surface: #191C20;
+    --md-sys-color-on-surface-variant: #43474E;
+    --md-sys-color-outline: #74777F;
+    --md-sys-color-outline-variant: #C4C6D0;
 
-    --md-sys-color-primary: #904B32;
-    --md-sys-color-primary-hover: #753922;
+    --md-sys-color-primary: #255396;
+    --md-sys-color-primary-hover: #1C4278;
     --md-sys-color-on-primary: #FFFFFF;
-    --md-sys-color-primary-container: #FFDBCF;
-    --md-sys-color-on-primary-container: #3A0B00;
+    --md-sys-color-primary-container: #D6E3FF;
+    --md-sys-color-on-primary-container: #001B3E;
 
-    --md-sys-color-secondary: #77574C;
+    --md-sys-color-secondary: #555F71;
     --md-sys-color-on-secondary: #FFFFFF;
-    --md-sys-color-secondary-container: #FFDBCF;
-    --md-sys-color-on-secondary-container: #2C160E;
+    --md-sys-color-secondary-container: #D9E3F8;
+    --md-sys-color-on-secondary-container: #121C2B;
 
-    --md-sys-color-tertiary: #6B5E2F;
+    --md-sys-color-tertiary: #7A5900;
     --md-sys-color-on-tertiary: #FFFFFF;
-    --md-sys-color-tertiary-container: #F5E2A7;
-    --md-sys-color-on-tertiary-container: #231B00;
+    --md-sys-color-tertiary-container: #FFDF9E;
+    --md-sys-color-on-tertiary-container: #261900;
 
     --md-sys-color-error: #BA1A1A;
     --md-sys-color-on-error: #FFFFFF;
     --md-sys-color-error-container: #FFDAD6;
     --md-sys-color-on-error-container: #410002;
 
-    --glow-primary: rgba(144, 75, 50, 0.12);
+    /* Gold accent = tertiary (Star Gold) in light mode */
+    --md-sys-color-accent: var(--md-sys-color-tertiary);
+    --md-sys-color-on-accent: var(--md-sys-color-on-tertiary);
+    --md-sys-color-accent-container: var(--md-sys-color-tertiary-container);
+    --md-sys-color-on-accent-container: var(--md-sys-color-on-tertiary-container);
+
+    --glow-primary: rgba(37, 83, 150, 0.12);
 
     /* --- Backwards Compatibility Layer (Maps legacy tokens to M3) --- */
     --bg-canvas: var(--md-sys-color-surface);
@@ -103,43 +114,50 @@
   .dark {
     /* ==========================================================================
        Material 3 (Material You / M3) Design Tokens — Dark Theme
+       Seed: Kitasan Black — Festival Crimson (#930023) on Obsidian Ink
        ========================================================================== */
-    --md-sys-color-surface: #1A110F;
-    --md-sys-color-surface-dim: #1A110F;
-    --md-sys-color-surface-bright: #423734;
-    --md-sys-color-surface-container-lowest: #140C0A;
-    --md-sys-color-surface-container-low: #231917;
-    --md-sys-color-surface-container: #271D1B;
-    --md-sys-color-surface-container-high: #322825;
-    --md-sys-color-surface-container-highest: #3E322F;
+    --md-sys-color-surface: #191414;
+    --md-sys-color-surface-dim: #191414;
+    --md-sys-color-surface-bright: #403838;
+    --md-sys-color-surface-container-lowest: #130F0F;
+    --md-sys-color-surface-container-low: #221C1C;
+    --md-sys-color-surface-container: #262020;
+    --md-sys-color-surface-container-high: #312A2A;
+    --md-sys-color-surface-container-highest: #3C3434;
 
-    --md-sys-color-on-surface: #F1DFDA;
-    --md-sys-color-on-surface-variant: #D8C2BC;
-    --md-sys-color-outline: #A08C86;
-    --md-sys-color-outline-variant: #53433F;
+    --md-sys-color-on-surface: #F0DFDE;
+    --md-sys-color-on-surface-variant: #D7C1C0;
+    --md-sys-color-outline: #9F8C8B;
+    --md-sys-color-outline-variant: #524343;
 
-    --md-sys-color-primary: #FFB59D;
-    --md-sys-color-primary-hover: #FFCCBC;
-    --md-sys-color-on-primary: #561E0A;
-    --md-sys-color-primary-container: #72341D;
-    --md-sys-color-on-primary-container: #FFDBCF;
+    --md-sys-color-primary: #FFB3B4;
+    --md-sys-color-primary-hover: #FFC9CA;
+    --md-sys-color-on-primary: #680016;
+    --md-sys-color-primary-container: #930023;
+    --md-sys-color-on-primary-container: #FFDADA;
 
-    --md-sys-color-secondary: #E7BDB0;
-    --md-sys-color-on-secondary: #442A21;
-    --md-sys-color-secondary-container: #5D4036;
-    --md-sys-color-on-secondary-container: #FFDBCF;
+    --md-sys-color-secondary: #E9C349;
+    --md-sys-color-on-secondary: #3B2F00;
+    --md-sys-color-secondary-container: #554500;
+    --md-sys-color-on-secondary-container: #FFE178;
 
-    --md-sys-color-tertiary: #D7C68D;
-    --md-sys-color-on-tertiary: #3A3005;
-    --md-sys-color-tertiary-container: #52461A;
-    --md-sys-color-on-tertiary-container: #F5E2A7;
+    --md-sys-color-tertiary: #E5BDBB;
+    --md-sys-color-on-tertiary: #442928;
+    --md-sys-color-tertiary-container: #5D3F3E;
+    --md-sys-color-on-tertiary-container: #FFDADA;
 
     --md-sys-color-error: #FFB4AB;
     --md-sys-color-on-error: #690005;
     --md-sys-color-error-container: #93000A;
     --md-sys-color-on-error-container: #FFDAD6;
 
-    --glow-primary: rgba(255, 181, 157, 0.15);
+    /* Gold accent = secondary (Festival Gold) in dark mode */
+    --md-sys-color-accent: var(--md-sys-color-secondary);
+    --md-sys-color-on-accent: var(--md-sys-color-on-secondary);
+    --md-sys-color-accent-container: var(--md-sys-color-secondary-container);
+    --md-sys-color-on-accent-container: var(--md-sys-color-on-secondary-container);
+
+    --glow-primary: rgba(233, 195, 73, 0.15);
 
     /* --- Backwards Compatibility Layer (Dark M3) --- */
     --bg-canvas: var(--md-sys-color-surface);
@@ -179,6 +197,46 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     transition: background-color 0.2s ease, color 0.2s ease;
     overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+  }
+
+  /* Global themed scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--md-sys-color-surface-container-low);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--md-sys-color-outline-variant);
+    border-radius: 999px;
+    border: 2px solid var(--md-sys-color-surface-container-low);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--md-sys-color-outline);
+  }
+  html {
+    scrollbar-color: var(--md-sys-color-outline-variant) var(--md-sys-color-surface-container-low);
+    scrollbar-width: thin;
+  }
+
+  /* Theme flip: smooth 150-200ms color crossfade on surfaces */
+  .theme-transition,
+  .theme-transition *,
+  .theme-transition *::before,
+  .theme-transition *::after {
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      fill 0.2s ease,
+      stroke 0.2s ease,
+      box-shadow 0.2s ease !important;
   }
 }
 

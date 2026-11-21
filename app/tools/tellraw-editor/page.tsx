@@ -260,7 +260,7 @@ export default function TellrawEditorPage() {
                 key={s.id}
                 title={s.hoverAction === 'show_text' ? `[Hover Tooltip]: ${s.hoverValue}` : undefined}
                 className={`inline-block relative cursor-pointer group ${
-                  s.id === activeSegment.id ? 'ring-1 ring-amber-400/80 rounded-xs' : ''
+                  s.id === activeSegment.id ? 'ring-1 ring-[var(--md-sys-color-accent)]/80 rounded-xs' : ''
                 }`}
                 onClick={() => setActiveSegId(s.id)}
                 style={{
@@ -273,7 +273,7 @@ export default function TellrawEditorPage() {
               >
                 {s.text || '<empty>'}
                 {s.hoverAction === 'show_text' && s.hoverValue && (
-                  <span className="hidden group-hover:block absolute bottom-full left-0 mb-1 z-30 px-2 py-1 bg-black/90 text-white border border-gray-600 rounded text-xs whitespace-nowrap shadow-lg">
+                  <span className="hidden group-hover:block absolute bottom-full left-0 mb-1 z-30 px-2 py-1 bg-black/90 text-white border border-[var(--md-sys-color-outline)] rounded text-xs whitespace-nowrap shadow-lg">
                     {s.hoverValue}
                   </span>
                 )}

@@ -9,6 +9,23 @@ import { gridToAscii } from '@/app/lib/voxel-utils';
 
 type FillMode = 'outline' | 'thin' | 'filled';
 
+/** Resolves an M3 color token to the concrete color of the active theme. */
+function getThemeColor(varName: string): string {
+  return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+}
+
+/** Resolves an M3 color token and applies an alpha channel to it (hex -> rgba). */
+function withAlpha(varName: string, alpha: number): string {
+  const hex = getThemeColor(varName);
+  if (/^#[0-9a-f]{6}$/i.test(hex)) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+  return hex;
+}
+
 /**
  * Midpoint / Ellipse rasterization algorithm for Minecraft blocks.
  * Generates a boolean 2D matrix representing blocks.
@@ -135,11 +152,11 @@ export default function CircleGeneratorPage() {
     canvas.height = canvasHeight;
 
     // Background
-    ctx.fillStyle = isDark ? '#15100E' : '#FFF8F6';
+    ctx.fillStyle = getThemeColor('--md-sys-color-surface-container-lowest');
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
     // Draw grid lines
-    ctx.strokeStyle = isDark ? '#2E221E' : '#EBE0DC';
+    ctx.strokeStyle = getThemeColor('--md-sys-color-surface-container-highest');
     ctx.lineWidth = 1;
 
     for (let x = 0; x <= width; x++) {
@@ -158,7 +175,7 @@ export default function CircleGeneratorPage() {
     // Center crosshair lines
     const cx = (width / 2) * blockSize;
     const cz = (height / 2) * blockSize;
-    ctx.strokeStyle = isDark ? 'rgba(255, 181, 157, 0.45)' : 'rgba(144, 75, 50, 0.35)';
+    ctx.strokeStyle = withAlpha('--md-sys-color-primary', isDark ? 0.45 : 0.35);
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(cx, 0);
@@ -168,8 +185,10 @@ export default function CircleGeneratorPage() {
     ctx.stroke();
 
     // Render Blocks
-    const blockFill = isDark ? '#FFB59D' : '#904B32';
-    const blockBorder = isDark ? '#FFDBCF' : '#72341D';
+    const blockFill = getThemeColor('--md-sys-color-primary');
+    const blockBorder = isDark
+      ? getThemeColor('--md-sys-color-primary-container')
+      : getThemeColor('--md-sys-color-on-primary-container');
 
     for (let z = 0; z < height; z++) {
       for (let x = 0; x < width; x++) {

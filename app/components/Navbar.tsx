@@ -16,7 +16,7 @@ export interface NavbarProps {
 
 /**
  * Navbar redesign decisions (R-31, one line each):
- * - Brand lockup: "KitaMCTools" as one wordmark with a single terracotta accent on "MC",
+ * - Brand lockup: "KitaMCTools" as one wordmark with a single primary-color accent on "MC",
  *   replacing the split Kita/MCTools/M3 chip lockup (the M3 chip said nothing functional, R-09).
  * - Active nav indicator: M3 nav-tab convention, a small bar under the active item plus
  *   tonal pill, so active state is never color alone (R-39).
@@ -90,7 +90,7 @@ export function MobileNavbar({ isOpen, onClose }: MobileNavbarProps) {
         onClick={onClose}
         className="md:hidden fixed inset-0 top-16 z-40 bg-black/40 cursor-pointer"
       />
-      <div className="md:hidden absolute top-full left-0 right-0 border-t border-[var(--md-sys-color-outline-variant)]/40 bg-[var(--md-sys-color-surface-container-low)] px-4 pt-3 pb-5 shadow-xl">
+      <div className="md:hidden absolute top-full left-0 right-0 border-t border-[var(--md-sys-color-outline-variant)]/40 bg-[var(--md-sys-color-surface-container-low)] px-4 pt-3 pb-5">
         <nav className="flex flex-col gap-1" aria-label="Mobile Navigation">
           {MAIN_NAV_ITEMS.map((item, i) => {
             const isActive = pathname === item.href;
@@ -184,7 +184,7 @@ export function Navbar({
               className="object-contain transition-transform duration-200 group-hover:scale-105"
               priority
             />
-            {/* Single wordmark, one terracotta accent: cleaner lockup than split text + chip */}
+            {/* Single wordmark, one primary-color accent: cleaner lockup than split text + chip */}
             <span className="font-headline font-extrabold text-lg tracking-tight text-[var(--md-sys-color-on-surface)]">
               Kita
               <span className="text-[var(--md-sys-color-primary)]">MC</span>

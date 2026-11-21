@@ -339,7 +339,7 @@ export default function FireworkDesignerPage() {
           <div className="bg-[var(--md-sys-color-surface-container-low)] border border-[var(--md-sys-color-outline-variant)]/40 rounded-2xl p-5 shadow-2xs space-y-4">
             <div className="flex items-center justify-between">
               <div className="text-xs font-bold text-[var(--md-sys-color-on-surface-variant)] flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[var(--md-sys-color-accent)] animate-pulse" />
                 Night Sky Simulation
               </div>
               <button

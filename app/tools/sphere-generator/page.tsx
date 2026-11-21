@@ -10,6 +10,23 @@ import { gridToAscii } from '@/app/lib/voxel-utils';
 type SphereMode = 'sphere' | 'dome';
 type ShellMode = 'hollow' | 'filled';
 
+/** Resolves an M3 color token to the concrete color of the active theme. */
+function getThemeColor(varName: string): string {
+  return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+}
+
+/** Resolves an M3 color token and applies an alpha channel to it (hex -> rgba). */
+function withAlpha(varName: string, alpha: number): string {
+  const hex = getThemeColor(varName);
+  if (/^#[0-9a-f]{6}$/i.test(hex)) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+  return hex;
+}
+
 /**
  * Generates 3D voxel ellipsoid data layer by layer.
  * Returns boolean[y][z][x]
@@ -142,11 +159,11 @@ export default function SphereGeneratorPage() {
     canvas.height = height * blockSize;
 
     // Background
-    ctx.fillStyle = isDark ? '#15100E' : '#FFF8F6';
+    ctx.fillStyle = getThemeColor('--md-sys-color-surface-container-lowest');
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Grid lines
-    ctx.strokeStyle = isDark ? '#2E221E' : '#EBE0DC';
+    ctx.strokeStyle = getThemeColor('--md-sys-color-surface-container-highest');
     ctx.lineWidth = 1;
 
     for (let x = 0; x <= width; x++) {
@@ -165,7 +182,7 @@ export default function SphereGeneratorPage() {
     // Axes
     const cx = Math.floor(width / 2) * blockSize + blockSize / 2;
     const cz = Math.floor(height / 2) * blockSize + blockSize / 2;
-    ctx.strokeStyle = isDark ? 'rgba(255, 181, 157, 0.45)' : 'rgba(144, 75, 50, 0.35)';
+    ctx.strokeStyle = withAlpha('--md-sys-color-primary', isDark ? 0.45 : 0.35);
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.moveTo(cx, 0);
@@ -175,8 +192,10 @@ export default function SphereGeneratorPage() {
     ctx.stroke();
 
     // Render Blocks
-    const blockFill = isDark ? '#FFB59D' : '#904B32';
-    const blockBorder = isDark ? '#FFDBCF' : '#72341D';
+    const blockFill = getThemeColor('--md-sys-color-primary');
+    const blockBorder = isDark
+      ? getThemeColor('--md-sys-color-primary-container')
+      : getThemeColor('--md-sys-color-on-primary-container');
 
     for (let z = 0; z < height; z++) {
       for (let x = 0; x < width; x++) {
