@@ -22,6 +22,7 @@ export const FOOTER_SECTIONS: FooterSection[] = [
       { label: 'Beacon Pyramid Calculator', href: '/tools/beacon-calculator' },
       { label: 'XP & Mob Farm Calculator', href: '/tools/xp-calculator' },
       { label: 'Leather Armor Dye Mixer', href: '/tools/leather-dye-calculator' },
+      { label: 'AI Crash Log Analyzer', href: '/tools/log-analyzer' },
     ],
   },
   {

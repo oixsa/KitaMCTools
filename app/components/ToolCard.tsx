@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { Tool } from '../types/tools';
+import { useRipple } from '../hooks/useRipple';
 
 interface ToolCardProps {
   tool: Tool;
@@ -14,26 +16,37 @@ export function ToolCard({
   isFavorite,
   onToggleFavorite,
 }: ToolCardProps) {
+  const onRipple = useRipple();
+  const [starPopping, setStarPopping] = useState(false);
+
+  const handleFavorite = () => {
+    onToggleFavorite();
+    if (!isFavorite) {
+      // Pop only when starring (not when unstarring)
+      setStarPopping(true);
+    }
+  };
+
   return (
-    <div className="bg-[var(--md-sys-color-surface-container-low)] border border-[var(--md-sys-color-outline-variant)]/40 rounded-[20px] p-4 sm:p-5 shadow-2xs hover:bg-[var(--md-sys-color-surface-container)] hover:shadow-md hover:border-[var(--md-sys-color-outline-variant)] transition-all duration-200 flex flex-col justify-between group hover:-translate-y-0.5">
+    <div
+      className="m3-ripple-host bg-[var(--md-sys-color-surface-container-low)] border border-[var(--md-sys-color-outline-variant)]/40 rounded-[20px] p-4 sm:p-5 shadow-2xs hover:bg-[var(--md-sys-color-surface-container)] hover:shadow-md hover:border-[var(--md-sys-color-outline-variant)] transition-all duration-200 flex flex-col justify-between group hover:-translate-y-0.5 active:scale-[0.99]"
+      onPointerDown={onRipple}
+    >
       <div>
         {/* Card Thumbnail / Preview Viewport (M3 Surface Container) */}
         <div className="relative w-full h-32 sm:h-36 rounded-2xl bg-[var(--md-sys-color-surface-container)] border border-[var(--md-sys-color-outline-variant)]/30 mb-3.5 flex items-center justify-center overflow-hidden">
           {/* Favorite Toggle Star (M3 Icon Toggle Button) */}
           <button
             type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              onToggleFavorite();
-            }}
+            onClick={handleFavorite}
             className="absolute top-2.5 left-2.5 w-8 h-8 rounded-full bg-[var(--md-sys-color-surface-container-lowest)]/90 backdrop-blur-xs flex items-center justify-center text-[var(--md-sys-color-outline)] hover:text-[var(--md-sys-color-tertiary)] shadow-2xs transition-colors z-10 cursor-pointer active:scale-95"
             aria-label={isFavorite ? `Unfavorite ${tool.title}` : `Favorite ${tool.title}`}
           >
             <span
+              onAnimationEnd={() => setStarPopping(false)}
               className={`material-symbols-outlined text-[18px] transition-transform ${
                 isFavorite
-                  ? 'text-[var(--md-sys-color-tertiary)] filled scale-110'
+                  ? `text-[var(--md-sys-color-tertiary)] filled scale-110 ${starPopping ? 'star-pop' : ''}`
                   : 'text-[var(--md-sys-color-outline)]'
               }`}
             >
@@ -83,7 +96,7 @@ export function ToolCard({
         </span>
         <Link
           href={tool.href}
-          className="w-8 h-8 rounded-full bg-[var(--md-sys-color-primary-container)] text-[var(--md-sys-color-on-primary-container)] flex items-center justify-center shadow-2xs group-hover:bg-[var(--md-sys-color-primary)] group-hover:text-[var(--md-sys-color-on-primary)] transition-all transform group-hover:translate-x-0.5 active:scale-95"
+          className="m3-ripple-host w-8 h-8 rounded-full bg-[var(--md-sys-color-primary-container)] text-[var(--md-sys-color-on-primary-container)] flex items-center justify-center shadow-2xs group-hover:bg-[var(--md-sys-color-primary)] group-hover:text-[var(--md-sys-color-on-primary)] transition-all transform group-hover:translate-x-0.5 active:scale-95"
           aria-label={`Open ${tool.title}`}
         >
           <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
